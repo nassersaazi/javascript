@@ -133,7 +133,7 @@ body {
   .btn-inline span {
     margin: 0 .4rem; }
   .btn-inline:hover {
-    color: #F48982;
+    color: hsl(134, 59%, 18%);;
     background-color: #F2EFEE; }
   .btn-inline:focus {
     outline: none; }
@@ -184,7 +184,7 @@ body {
   .loader svg {
     height: 5.5rem;
     width: 5.5rem;
-    fill: hsl(136, 65%, 51%);
+    fill: #31d35c;
     transform-origin: 44% 50%;
     animation: rotate 1.5s infinite linear; }
 
