@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { newsApiKey } from '../config'
 
 export default  class Search {
 
@@ -7,10 +8,10 @@ export default  class Search {
     }
 
     async getResults() {
-        const key = 'd09016db83884b2b97718e7ad5314037';
+        
     
         try {
-            const res = await axios(`https://newsapi.org/v2/everything?q=${this.query}&from=2021-05-28&language=en&sortBy=publishedAt&apiKey=${key}`);
+            const res = await axios(`https://newsapi.org/v2/everything?q=${this.query}&from=2021-05-28&language=en&sortBy=publishedAt&apiKey=${newsApiKey}`);
             console.log(res);
             this.result = res.data.articles;
            

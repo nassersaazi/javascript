@@ -1,4 +1,5 @@
 import Search from './models/Search';
+import Coin from './models/Coin';
 import * as searchView from './views/searchView';
 import { elements, renderLoader, clearLoader } from './views/base';
 /**
@@ -11,6 +12,9 @@ import { elements, renderLoader, clearLoader } from './views/base';
 
 const state = {};
 
+/**
+ * SEARCH CONTROLLER
+ */
 const controlSearch = async () => {
     // 1) Get query from view 
     const query = searchView.getInput(); 
@@ -25,16 +29,31 @@ const controlSearch = async () => {
         searchView.clearResults();
         renderLoader(elements.searchRes);
 
-        //4) Search for recipes
+        try {
+
+            //4) Search for recipes
         await state.search.getResults();
 
         //5) Render results to UI
         clearLoader();
         searchView.renderResults(state.search.result)
+
+        } catch (err) {
+            alert('Something wrong with the search...');
+            clearLoader();
+        }
+        
     }
 }
 
-//logo should be coinbench with text logo whose color is page gradient(borrow inspiration from coinbase logo)
+elements.searchResPages.addEventListener('click', e => {
+    const btn = e.target.closest('.btn-inline');
+    if (btn) {
+        const goToPage = parseInt(btn.dataset.goto, 10);
+        searchView.clearResults();
+        searchView.renderResults(state.search.result, goToPage);
+    }
+});
 
 elements.searchForm.addEventListener('submit', e => {
     e.preventDefault();

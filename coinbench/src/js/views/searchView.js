@@ -8,7 +8,7 @@ export const clearInput = () => {
 
   export const clearResults = () => {
     elements.searchResList.innerHTML = "";
-    // elements.searchResPages.innerHTML = "";
+    elements.searchResPages.innerHTML = "";
   };
 
 const renderArticle = article => {

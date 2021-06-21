@@ -1,0 +1,7 @@
+-apply glassmorphism to coinbench project
+-refer to Joe Zach's portfolio for inspiration on portfolio improvement
+-apply js/css horizontal scrollbar /status bar effects on skills section in portfolio
+
+-Create object of the most popular coins and their symbols
+-Restrict search for only keys or values in that object
+-In case search is out of bounds, render error("Sorry! Can't find anything .Probably a new shitcoin? :)")

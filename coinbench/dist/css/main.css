@@ -211,14 +211,26 @@ margin-left: 4rem;
     }  
 
     .logo {
+      display: flex;
+      justify-content: space-between;
       font-family: 'Nunito Sans', sans-serif;
-font-weight: 400;
-line-height: 1.6;
-margin: 0;
-box-sizing: inherit;
-font-size: xxx-large;
-padding: 2rem 4rem;
-color: hsl(136, 65%, 51%);
+      font-weight: 400;
+      line-height: 1.6;
+      margin: 0;
+      box-sizing: inherit;
+      font-size: xx-large;
+      padding: 1rem 2rem;
+      color: hsl(136, 65%, 51%);
+    }
+
+    .logo img {
+      height: 8rem;
+      width: 8rem;
+      align-self: center;
+    }
+
+    .logo p {
+      align-self: center;
     }
 .search {
   background-color: #fff;
