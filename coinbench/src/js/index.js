@@ -15,10 +15,10 @@ const state = {};
 /**
  * SEARCH CONTROLLER
  */
-const controlSearch = async () => {
-    // 1) Get query from view 
-    const query = searchView.getInput(); 
-    console.log(query);
+const controlSearch = async (query) => {
+    // // 1) Get query from view 
+    // const query = searchView.getInput(); 
+    // console.log(query);
     
     if (query) {
         //2) New search object and add to state
@@ -57,5 +57,31 @@ elements.searchResPages.addEventListener('click', e => {
 
 elements.searchForm.addEventListener('submit', e => {
     e.preventDefault();
-    controlSearch();
+    controlCoin();
 })
+
+/**
+ * COIN CONTROLLER
+ */
+
+const controlCoin = async () => {
+    // 1) Get query from view 
+    let query = searchView.getInput(); 
+    console.log(query);
+    if (query) {
+        const searchQuery = query.replace(' ','-').toLowerCase();
+        console.log(`search : ${searchQuery}`);
+        state.coinDetails = new Coin(searchQuery);
+        try {
+            // get coin data
+            await state.coinDetails.getCoinData();
+            console.log(state.coinDetails);
+            controlSearch(query);
+        } catch (error) {
+            alert("Nothing found on that asset :(");
+        }
+        
+    }
+}
+
+

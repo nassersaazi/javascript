@@ -1,23 +1,25 @@
 import axios from "axios";
-import { newsApiKey } from "../config";
 
-// export default class Coin {
-//   constructor(id) {
-//     this.id = id;
-//   };
+export default class Coin {
+  constructor(id) {
+    this.id = id;
+  };
 
-//   async getCoinData() {
-//     // try {
-//     //   const res = await axios(
-//     //     `https://forkify-api.herokuapp.com/api/get?rId=${this.id}`
-//     //   );
-//     //   this.title = res.data.recipe.title;
-//     //   this.author = res.data.recipe.publisher;
-//     //   this.img = res.data.recipe.image_url;
-//     //   this.url = res.data.recipe.source_url;
-//     //   this.ingredients = res.data.recipe.ingredients;
-//     // } catch (error) {
-//     //   console.log(error);
-//     //   alert("Something went wrong :(");
-//     // }
-//   }
+  async getCoinData() {
+    const res = await axios(
+        `https://api.coincap.io/v2/assets/${this.id}`);
+  
+    
+    this.name = res.data.data.name;
+    this.symbol = res.data.data.symbol;
+    this.price = res.data.data.priceUsd;
+    this.marketCap = res.data.data.marketCapUsd;
+    this.rank = res.data.data.rank;
+    this.percentChange = res.data.data.changePercent24Hr;
+    this.supply = res.data.data.supply;
+    this.maxSupply = res.data.data.maxSupply;
+    this.volume = res.data.data.volumeUsd24Hr;
+
+    
+  }
+}
