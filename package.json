@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "firebase-tools": "^9.14.0",
+    "react-slick": "^0.28.1"
+  }
+}
