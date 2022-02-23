@@ -107,6 +107,10 @@ export const NavProductsIcon = styled(IoIosArrowDropdown)`
   }
 `;
 
+export const Span = styled.span`
+  font-size: 2rem;
+`;
+
 
 // Social Icons 
 
