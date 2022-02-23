@@ -2,8 +2,7 @@ import React from 'react';
 
 import './possibility.css';
 const Possibility = () => {
-  return 
-  (
+  return (
     <div>Possibility</div>
   )
 }

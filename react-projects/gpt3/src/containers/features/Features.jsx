@@ -2,8 +2,7 @@ import React from 'react';
 
 import './features.css';
 const Features = () => {
-  return 
-  (
+  return (
     <div>
         Features
     </div>
